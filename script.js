@@ -56,6 +56,13 @@ letterScreen.style.display = "none";
 ========================================================= */
 
 startButton.addEventListener("click", () => {
+   backgroundMusic.play()
+    .then(() => {
+        console.log("MUSIC STARTED");
+    })
+    .catch((error) => {
+        console.error("MUSIC ERROR:", error);
+    });
 
     startScreen.style.display = "none";
 
