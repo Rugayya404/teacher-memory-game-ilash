@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Əziz müəllimim üçün</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND MUSIC
+    ====================================================== -->
+
+    <audio id="background-music" loop>
+
+        <source
+            src="music/background.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- =====================================================
+         START SCREEN
+    ====================================================== -->
+
+    <section id="start-screen">
+
+        <h1>
+            Əziz müəllimim üçün
+        </h1>
+
+        <p>
+            Kiçik bir oyun
+        </p>
+
+        <button id="start-button">
+            BAŞLA
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GAME SCREEN
+    ====================================================== -->
+
+    <section id="game-screen">
+
+
+        <h2>
+            Rəsmlərimizi uyğunlaşdırın!
+        </h2>
+
+
+        <div id="memory-counter">
+
+            Xatirələr tapıldı!!:
+
+            <span id="found-count">
+                0
+            </span>
+
+            / 4
+
+        </div>
+
+
+        <div id="game-board">
+
+            <!-- Cards are created with JavaScript -->
+
+        </div>
+
+
+
+        <!-- =================================================
+             MEMORY POPUP
+        ================================================== -->
+
+        <div id="memory-popup">
+
+
+            <div id="memory-card">
+
+
+                <div class="memory-star">
+                    ✦
+                </div>
+
+
+                <h2>
+                    Kilid açıldı!
+                </h2>
+
+
+                <div id="memory-image-container">
+
+                    <img
+                        id="memory-image"
+                        src=""
+                        alt="Memory"
+                    >
+
+                </div>
+
+
+                <p id="memory-text">
+                    Yadda saxlamağa dəyər kiçik bir xatirə.
+                </p>
+
+
+                <button id="continue-button">
+                    DAVAM EDİN!
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div id="memory-message">
+            Kilid açıldı!
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL SCREEN
+    ====================================================== -->
+
+    <section id="final-screen">
+
+
+        <div class="final-content">
+
+
+            <p class="final-small">
+                BÜTÜN XATİRƏLƏR TAPILDI!
+            </p>
+
+
+            <h1>
+                DAVAM EDƏCƏK!
+            </h1>
+
+
+            <div class="final-line"></div>
+
+
+            <p class="final-message">
+                Bəzi xatirələr əbədi olaraq
+                yadda saxlamağa dəyər.
+            </p>
+
+
+            <p class="final-thanks">
+                Təşəkkür edirəm HƏR ŞEY ÜÇÜN!
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LETTER SCREEN
+    ====================================================== -->
+
+    <section id="letter-screen">
+
+
+        <div class="letter-intro">
+
+            <p>
+                Son bir şey!
+            </p>
+
+        </div>
+
+
+
+        <div class="letter-paper">
+
+
+            <div class="letter-symbol">
+                ✦
+            </div>
+
+
+            <p class="letter-date">
+                05.10.2026
+            </p>
+
+
+            <h2>
+                Dəyərli müəllimim,
+            </h2>
+
+
+
+            <!-- =================================================
+                 LETTER CONTENT
+            ================================================== -->
+
+            <div class="letter-content">
+
+
+                <p>
+                    SİZ HƏR ŞEYİN ƏN YAXŞISINA LAYİQSİNİZ!
+                </p>
+
+
+                <p>
+                    Bunu sizə hər zaman, hər saniyə, sizi hər görəndə
+                    demək istəyirəm! Amma bilmirəm niyə, bunu deməyə
+                    cəsarətim çatmır. Yaxşı ki varsınız, yaxşı ki
+                    sizinlə tanış olmuşam!
+                </p>
+
+
+                <p>
+                    Həyatda mənə motivasiya verən, məni ruhlandıran
+                    insanlardan biri olduğunuz üçün sizə çox təşəkkür
+                    edirəm.
+                </p>
+
+
+                <p>
+                    Bəlkə də siz bunun fərqində deyilsiniz, amma
+                    dediyiniz bəzi sözlər, verdiyiniz məsləhətlər və
+                    hətta bəzən sadəcə bir cümləniz belə mənim üçün
+                    çox şey ifadə edir.
+                </p>
+
+
+                <p>
+                    Sizin dərslərinizdə özümü həmişə rahat hiss etmişəm
+                    və düşünürəm ki, bu, müəllimdə olan ən gözəl
+                    xüsusiyyətlərdən biridir.
+                </p>
+
+
+                <p>
+                    Bu il bizim son ilimizdir və bunu düşünəndə bir az
+                    qəribə hiss edirəm. Çünki hələ qarşıda birlikdə
+                    keçirəcəyimiz çox vaxt, çox dərs və çoxlu xatirə var,
+                    amma bir tərəfdən də bilirəm ki, bu günlər bir gün
+                    bizim üçün sadəcə xatirə olacaq.
+                </p>
+
+
+                <p>
+                    Ona görə bu il yaşadığımız hər anın qədrini
+                    bilmək istəyirəm.
+                </p>
+
+
+                <p>
+                    Mənə verdiyiniz bütün dəstəyə, səbrə, motivasiyaya
+                    və ən əsası, siz olduğunuza görə sizə təşəkkür edirəm.
+                </p>
+
+
+                <p>
+                    Sizi müəllimim kimi tanıdığım üçün həqiqətən
+                    çox şanslıyam.
+                </p>
+
+
+                <p>
+                    Ümid edirəm ki, illər sonra geriyə baxanda mən də
+                    sizin xatırladığınız şagirdlərdən biri olaram. 🤍
+                </p>
+
+
+                <p>
+                    Yaxşı ki mənim müəllimim olmusunuz.
+                    Yaxşı ki yollarımız kəsişib.
+                    Və yaxşı ki bu hekayə hələ bitməyib.
+                </p>
+
+
+                <p>
+                    Happy Teacher's Day! ❤️
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LETTER ENDING
+            ================================================== -->
+
+            <div class="letter-ending">
+
+
+                <p>
+                    Sevgiylə,
+                </p>
+
+
+                <p class="letter-name">
+                    Rüqəyya
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
