@@ -9,6 +9,10 @@ const letterScreen = document.getElementById("letter-screen");
 
 const backgroundMusic = document.getElementById("background-music");
 
+backgroundMusic.src = "background.mp3";
+backgroundMusic.load();
+backgroundMusic.volume = 0.25;
+
 const startButton = document.getElementById("start-button");
 
 const foundCount = document.getElementById("found-count");
