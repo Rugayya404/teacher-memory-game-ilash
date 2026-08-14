@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Serif+Display&family=Montserrat:wght@400;500;600&display=swap');
 
 
 /* =========================================================
@@ -21,18 +21,18 @@ html {
 body {
     min-height: 100vh;
 
-    background: #111827;
+    background: #101827;
 
-    color: #f8f4ea;
+    color: #f5f0e6;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     overflow: hidden;
 }
 
 
 /* =========================================================
-   ALL SCREENS
+   GLOBAL SCREEN
 ========================================================= */
 
 section {
@@ -50,7 +50,50 @@ section {
 
     text-align: center;
 
-    box-sizing: border-box;
+    position: relative;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND DETAILS
+========================================================= */
+
+section::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(196, 158, 83, 0.07),
+            transparent 42%
+        );
+}
+
+
+section::after {
+    content: "“";
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 150px;
+
+    line-height: 1;
+
+    color: rgba(196, 158, 83, 0.055);
+
+    pointer-events: none;
 }
 
 
@@ -59,25 +102,64 @@ section {
 ========================================================= */
 
 #start-screen {
-    gap: 18px;
+    gap: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101827 0%,
+            #152238 50%,
+            #101827 100%
+        );
 }
 
 
 #start-screen h1 {
+    position: relative;
+
     font-family: "DM Serif Display", serif;
 
-    font-size: 64px;
+    font-size: 70px;
 
-    letter-spacing: 3px;
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    color: #f5f0e6;
+
+    z-index: 2;
+}
+
+
+#start-screen h1::after {
+    content: "";
+
+    display: block;
+
+    width: 52px;
+
+    height: 1px;
+
+    background: #c7a45d;
+
+    margin: 22px auto 0;
 }
 
 
 #start-screen p {
-    font-size: 16px;
+    position: relative;
 
-    opacity: 0.7;
+    font-family: "Cormorant Garamond", serif;
 
-    margin-bottom: 25px;
+    font-size: 20px;
+
+    letter-spacing: 1px;
+
+    color: #cfc7b7;
+
+    margin-top: 4px;
+
+    z-index: 2;
 }
 
 
@@ -86,34 +168,49 @@ section {
 ========================================================= */
 
 #start-button {
-    padding: 14px 42px;
+    position: relative;
 
-    border: 1px solid #d4af37;
+    margin-top: 18px;
 
-    border-radius: 30px;
+    padding: 13px 40px;
+
+    border: 1px solid #c7a45d;
+
+    border-radius: 2px;
 
     background: transparent;
 
-    color: #f8f4ea;
+    color: #f5f0e6;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
-    font-size: 14px;
+    font-size: 11px;
 
-    letter-spacing: 2px;
+    font-weight: 500;
+
+    letter-spacing: 4px;
 
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    z-index: 2;
 }
 
 
 #start-button:hover {
-    background: #d4af37;
+    background: #c7a45d;
 
-    color: #111827;
+    color: #101827;
 
     transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(199, 164, 93, 0.18);
 }
 
 
@@ -122,16 +219,73 @@ section {
 ========================================================= */
 
 #game-screen {
-    gap: 30px;
+    gap: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101827,
+            #17243a,
+            #101827
+        );
 }
 
 
 #game-screen h2 {
+    position: relative;
+
     font-family: "DM Serif Display", serif;
 
-    font-size: 32px;
+    font-size: 38px;
 
     font-weight: normal;
+
+    letter-spacing: 1px;
+
+    z-index: 2;
+}
+
+
+.game-subtitle {
+    position: relative;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    color: #cfc7b7;
+
+    margin-bottom: 12px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   MEMORY COUNTER
+========================================================= */
+
+#memory-counter {
+    position: relative;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #bcb5a7;
+
+    margin-bottom: 7px;
+
+    z-index: 2;
+}
+
+
+#found-count {
+    color: #c7a45d;
+
+    font-weight: 600;
+
+    margin-left: 5px;
 }
 
 
@@ -140,15 +294,19 @@ section {
 ========================================================= */
 
 #game-board {
+    position: relative;
+
     width: 420px;
 
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 14px;
+    gap: 13px;
 
-    perspective: 1000px;
+    perspective: 1100px;
+
+    z-index: 2;
 }
 
 
@@ -159,20 +317,28 @@ section {
 .card {
     height: 90px;
 
-    border-radius: 14px;
-
     position: relative;
+
+    border-radius: 3px;
 
     cursor: pointer;
 
     transform-style: preserve-3d;
 
-    transition: transform 0.6s ease;
+    transition:
+        transform 0.65s cubic-bezier(
+            0.4,
+            0.0,
+            0.2,
+            1
+        );
 }
 
 
-.card:not(.flipped):hover {
-    transform: scale(1.04);
+.card:not(.flipped):not(.matched):hover {
+    transform:
+        scale(1.045)
+        translateY(-3px);
 }
 
 
@@ -184,7 +350,7 @@ section {
 
     height: 100%;
 
-    border-radius: 14px;
+    border-radius: 3px;
 
     display: flex;
 
@@ -193,24 +359,71 @@ section {
     align-items: center;
 
     backface-visibility: hidden;
+
+    overflow: hidden;
 }
 
+
+/* =========================================================
+   CARD FRONT
+========================================================= */
 
 .card-front {
-    background: #f8f4ea;
+    background:
+        linear-gradient(
+            145deg,
+            #1d2c45,
+            #142036
+        );
 
-    color: #111827;
+    border: 1px solid
+        rgba(199, 164, 93, 0.55);
 
-    font-size: 28px;
+    color: #c7a45d;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 33px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255, 255, 255, 0.025),
+
+        0 10px 25px
+        rgba(0, 0, 0, 0.2);
 }
 
 
+.card-front::after {
+    content: "";
+
+    position: absolute;
+
+    width: 54px;
+
+    height: 54px;
+
+    border: 1px solid
+        rgba(199, 164, 93, 0.18);
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   CARD BACK
+========================================================= */
+
 .card-back {
-    background: #f8f4ea;
+    background: #f5f0e6;
+
+    border: 1px solid #c7a45d;
 
     transform: rotateY(180deg);
 
-    overflow: hidden;
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.18);
 }
 
 
@@ -228,42 +441,10 @@ section {
 }
 
 
-/* =========================================================
-   MEMORY COUNTER
-========================================================= */
-
-#memory-counter {
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    opacity: 0.65;
-
-    margin-top: -15px;
-}
-
-
-#found-count {
-    color: #d4af37;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   MEMORY MESSAGE
-========================================================= */
-
-#memory-message {
-    font-size: 15px;
-
-    letter-spacing: 2px;
-
-    color: #d4af37;
-
-    opacity: 0;
-
-    transition: opacity 0.4s ease;
+.card.matched .card-back {
+    box-shadow:
+        0 0 0 2px
+        rgba(199, 164, 93, 0.35);
 }
 
 
@@ -276,7 +457,8 @@ section {
 
     inset: 0;
 
-    background: rgba(17, 24, 39, 0.75);
+    background:
+        rgba(10, 16, 27, 0.82);
 
     display: none;
 
@@ -286,33 +468,61 @@ section {
 
     z-index: 100;
 
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(9px);
 }
 
 
+/* =========================================================
+   MEMORY CARD
+========================================================= */
+
 #memory-card {
-    width: 360px;
+    position: relative;
 
-    padding: 35px 30px;
+    width: 380px;
 
-    background: #f8f4ea;
+    padding: 42px 34px 36px;
 
-    color: #111827;
+    background: #f5f0e6;
 
-    border-radius: 20px;
+    color: #172238;
+
+    border-radius: 3px;
 
     text-align: center;
 
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.45);
 
-    animation: memoryAppear 0.5s ease;
+    animation:
+        memoryAppear 0.55s ease;
+
+    overflow: hidden;
+}
+
+
+#memory-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 4px;
+
+    background: #c7a45d;
 }
 
 
 .memory-star {
-    color: #d4af37;
+    color: #a9823d;
 
-    font-size: 24px;
+    font-size: 25px;
 
     margin-bottom: 8px;
 }
@@ -321,24 +531,26 @@ section {
 #memory-card h2 {
     font-family: "DM Serif Display", serif;
 
-    font-size: 28px;
+    font-size: 31px;
 
-    letter-spacing: 1px;
+    font-weight: normal;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 
 #memory-image-container {
-    width: 220px;
+    width: 225px;
 
     height: 150px;
 
-    margin: 0 auto 20px;
+    margin: 0 auto 22px;
 
     overflow: hidden;
 
-    border-radius: 12px;
+    border-radius: 2px;
+
+    border: 1px solid #c7a45d;
 }
 
 
@@ -352,32 +564,36 @@ section {
 
 
 #memory-text {
-    font-size: 14px;
+    max-width: 290px;
 
-    line-height: 1.7;
+    margin: 0 auto 25px;
 
-    opacity: 0.7;
+    font-family: "Cormorant Garamond", serif;
 
-    margin-bottom: 25px;
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: #536071;
 }
 
 
 #continue-button {
-    padding: 11px 30px;
+    padding: 11px 31px;
 
-    border: 1px solid #111827;
+    border: 1px solid #172238;
 
-    border-radius: 25px;
+    border-radius: 2px;
 
     background: transparent;
 
-    color: #111827;
+    color: #172238;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
 
-    font-size: 12px;
+    font-size: 10px;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
 
     cursor: pointer;
 
@@ -386,26 +602,51 @@ section {
 
 
 #continue-button:hover {
-    background: #111827;
+    background: #172238;
 
-    color: #f8f4ea;
+    color: #f5f0e6;
 
     transform: translateY(-2px);
 }
 
+
+/* =========================================================
+   MEMORY MESSAGE
+========================================================= */
+
+#memory-message {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #c7a45d;
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   MEMORY ANIMATION
+========================================================= */
 
 @keyframes memoryAppear {
 
     from {
         opacity: 0;
 
-        transform: scale(0.9) translateY(15px);
+        transform:
+            scale(0.91)
+            translateY(18px);
     }
 
     to {
         opacity: 1;
 
-        transform: scale(1) translateY(0);
+        transform:
+            scale(1)
+            translateY(0);
     }
 }
 
@@ -415,11 +656,18 @@ section {
 ========================================================= */
 
 #final-screen {
-    background: #111827;
+    background:
+        linear-gradient(
+            135deg,
+            #101827,
+            #19263c,
+            #101827
+        );
 
     opacity: 0;
 
-    transition: opacity 1.5s ease;
+    transition:
+        opacity 1.5s ease;
 
     pointer-events: none;
 }
@@ -433,24 +681,25 @@ section {
 
 
 .final-content {
-    max-width: 650px;
+    max-width: 680px;
 
     padding: 40px;
 
     text-align: center;
 
-    animation: finalAppear 1.5s ease;
+    animation:
+        finalAppear 1.5s ease;
 }
 
 
 .final-small {
-    font-size: 11px !important;
+    font-size: 10px !important;
 
     letter-spacing: 4px;
 
-    color: #d4af37;
+    color: #c7a45d;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 
@@ -461,18 +710,18 @@ section {
 
     font-weight: normal;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
 
 .final-line {
-    width: 60px;
+    width: 58px;
 
     height: 1px;
 
-    background: #d4af37;
+    background: #c7a45d;
 
     margin: 0 auto 30px;
 }
@@ -480,22 +729,24 @@ section {
 
 .final-message,
 .final-thanks {
-    max-width: 560px;
+    max-width: 570px;
 
     margin: 0 auto;
 
-    font-size: 16px;
+    font-family: "Cormorant Garamond", serif;
 
-    line-height: 1.9;
+    font-size: 20px;
 
-    opacity: 0.75;
+    line-height: 1.65;
+
+    color: #d1cabc;
 }
 
 
 .final-thanks {
     margin-top: 12px;
 
-    opacity: 0.95;
+    color: #f5f0e6;
 }
 
 
@@ -504,7 +755,7 @@ section {
     from {
         opacity: 0;
 
-        transform: translateY(20px);
+        transform: translateY(22px);
     }
 
     to {
@@ -538,23 +789,23 @@ section {
 
     align-items: center;
 
-    background: #eee9df;
+    background:
+        #e8e2d7;
 
-    color: #111827;
+    color: #172238;
 
     z-index: 200;
 
     opacity: 0;
 
-    transition: opacity 1.2s ease;
+    transition:
+        opacity 1.2s ease;
 
     overflow-y: auto;
 
     overflow-x: hidden;
 
     padding: 0;
-
-    box-sizing: border-box;
 }
 
 
@@ -572,22 +823,23 @@ section {
 
     width: 100%;
 
-    padding: 35px 20px 20px;
+    padding: 34px 20px 18px;
 
     text-align: center;
 
-    animation: letterIntro 1s ease;
+    animation:
+        letterIntro 1s ease;
 }
 
 
 .letter-intro p {
     margin: 0;
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: 4px;
 
-    color: #b28b2e;
+    color: #8c6b35;
 }
 
 
@@ -598,32 +850,79 @@ section {
 .letter-paper {
     flex: 0 0 auto;
 
-    width: min(650px, 90vw);
-
-    height: auto;
+    width: min(670px, 90vw);
 
     min-height: 100vh;
 
-    max-height: none;
-
-    box-sizing: border-box;
-
     margin: 0 auto 80px;
 
-    padding: 70px 65px 100px;
+    padding: 68px 68px 100px;
 
-    background: #f8f4ea;
-
-    border: none;
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.18)
+        ),
+        #f7f2e8;
 
     border-radius: 2px;
 
+    border-top:
+        4px solid #172238;
+
     box-shadow:
-        0 15px 50px rgba(17, 24, 39, 0.10);
+        0 18px 55px
+        rgba(16, 24, 39, 0.13);
 
     position: relative;
 
     overflow: visible;
+}
+
+
+/* =========================================================
+   PAPER DECORATION
+========================================================= */
+
+.letter-paper::before {
+    content: "";
+
+    position: absolute;
+
+    top: 22px;
+
+    left: 22px;
+
+    width: 25px;
+
+    height: 25px;
+
+    border-top:
+        1px solid #c7a45d;
+
+    border-left:
+        1px solid #c7a45d;
+}
+
+
+.letter-paper::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 22px;
+
+    right: 22px;
+
+    width: 25px;
+
+    height: 25px;
+
+    border-bottom:
+        1px solid #c7a45d;
+
+    border-right:
+        1px solid #c7a45d;
 }
 
 
@@ -634,11 +933,11 @@ section {
 .letter-symbol {
     text-align: center;
 
-    color: #d4af37;
+    color: #a9823d;
 
-    font-size: 22px;
+    font-size: 24px;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 
@@ -649,13 +948,13 @@ section {
 .letter-date {
     text-align: right;
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: 1px;
 
-    opacity: 0.5;
+    color: #667080;
 
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 
@@ -666,11 +965,13 @@ section {
 .letter-paper h2 {
     font-family: "DM Serif Display", serif;
 
-    font-size: 28px;
+    font-size: 31px;
 
     font-weight: normal;
 
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+
+    text-align: center;
 }
 
 
@@ -681,18 +982,20 @@ section {
 .letter-content {
     width: 100%;
 
-    font-size: 15px;
+    font-family: "Cormorant Garamond", serif;
 
-    line-height: 2;
+    font-size: 19px;
 
-    opacity: 0.82;
+    line-height: 1.8;
+
+    color: #3f4a5a;
 
     text-align: center;
 }
 
 
 .letter-content p {
-    margin: 0 0 24px;
+    margin: 0 0 25px;
 
     opacity: 0;
 
@@ -711,16 +1014,31 @@ section {
 }
 
 
+.letter-content p:first-child {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    color: #172238;
+}
+
+
 /* =========================================================
    LETTER ENDING
 ========================================================= */
 
 .letter-ending {
-    margin-top: 45px;
+    margin-top: 48px;
 
-    font-size: 14px;
+    font-family: "Cormorant Garamond", serif;
 
-    line-height: 1.8;
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #3f4a5a;
 
     opacity: 0;
 
@@ -742,14 +1060,16 @@ section {
 .letter-name {
     font-family: "DM Serif Display", serif;
 
-    font-size: 20px;
+    font-size: 24px;
 
-    margin-top: 5px;
+    color: #172238;
+
+    margin-top: 3px;
 }
 
 
 /* =========================================================
-   LETTER ANIMATIONS
+   LETTER ANIMATION
 ========================================================= */
 
 @keyframes letterIntro {
@@ -775,7 +1095,26 @@ section {
 @media (max-width: 700px) {
 
     #start-screen h1 {
-        font-size: 44px;
+        font-size: 47px;
+    }
+
+
+    #start-screen p {
+        font-size: 17px;
+    }
+
+
+    #game-screen h2 {
+        font-size: 31px;
+    }
+
+
+    .game-subtitle {
+        padding: 0 25px;
+
+        font-size: 16px;
+
+        line-height: 1.5;
     }
 
 
@@ -783,6 +1122,13 @@ section {
         width: 90vw;
 
         max-width: 420px;
+
+        gap: 10px;
+    }
+
+
+    .card {
+        height: 82px;
     }
 
 
@@ -791,20 +1137,25 @@ section {
 
         padding:
             55px
-            35px
+            38px
             80px;
     }
 
 
     .letter-content {
-        font-size: 14px;
+        font-size: 17px;
 
-        line-height: 1.9;
+        line-height: 1.8;
     }
 
 
     .letter-paper h2 {
-        font-size: 25px;
+        font-size: 27px;
+    }
+
+
+    .final-content h1 {
+        font-size: 55px;
     }
 
 }
@@ -813,12 +1164,44 @@ section {
 @media (max-width: 450px) {
 
     #start-screen h1 {
-        font-size: 36px;
+        font-size: 38px;
+    }
+
+
+    #start-screen p {
+        font-size: 15px;
+    }
+
+
+    #game-screen h2 {
+        font-size: 27px;
+    }
+
+
+    .card {
+        height: 72px;
+    }
+
+
+    .card-front {
+        font-size: 27px;
     }
 
 
     #memory-card {
         width: 90vw;
+
+        padding:
+            34px
+            24px
+            30px;
+    }
+
+
+    #memory-image-container {
+        width: 200px;
+
+        height: 135px;
     }
 
 
@@ -826,9 +1209,37 @@ section {
         width: 94vw;
 
         padding:
-            45px
-            25px
+            48px
+            26px
             70px;
+    }
+
+
+    .letter-content {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    .letter-content p:first-child {
+        font-size: 18px;
+    }
+
+
+    .final-content {
+        padding: 25px;
+    }
+
+
+    .final-content h1 {
+        font-size: 43px;
+    }
+
+
+    .final-message,
+    .final-thanks {
+        font-size: 18px;
     }
 
 }
